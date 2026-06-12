@@ -58,9 +58,14 @@ export default function Navbar({ onOpenBudgetModal }: NavbarProps) {
           
           {/* Logo */}
           <a href="#inicio" className="flex items-center space-x-2.5 group" onClick={(e) => handleLinkClick(e, '#inicio')} id="nav-logo">
-            <div className="relative flex items-center justify-center h-10 w-10 bg-red-600 rounded-xl shadow-lg shadow-red-950/20 group-hover:scale-105 transition-transform">
-              <Flame className="h-5.5 w-5.5 text-white animate-pulse" />
-              <div className="absolute -top-0.5 -right-0.5 h-2.5 w-2.5 bg-yellow-400 rounded-full border border-red-600" />
+            <div className="relative flex items-center justify-center h-10 w-16 bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden shadow-lg shadow-red-950/10 group-hover:scale-105 transition-transform">
+              <img 
+                id="nav-logo-brand-img"
+                src="/src/assets/images/regenerated_image_1781259468522.png" 
+                alt="EEF Essimela Logo" 
+                className="h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center space-x-1">

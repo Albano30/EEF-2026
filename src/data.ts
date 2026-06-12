@@ -80,7 +80,7 @@ export const PROJECTS: ProjectItem[] = [
     id: 'sprinklers-industrial',
     title: 'Sistema de sprinklers industriais',
     category: 'Sistemas',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+    image: 'sprinklers_industrial',
     description: 'Instalação completa de rede de tubulação de ferro galvanizado e sprinklers automáticos em pavilhão logístico.'
   },
   {
@@ -94,14 +94,14 @@ export const PROJECTS: ProjectItem[] = [
     id: 'recarga-extintores-massa',
     title: 'Recarga massiva de extintores',
     category: 'Recarga',
-    image: 'https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=800',
+    image: 'recarga_extintores_massa',
     description: 'Manutenção técnica de mais de 300 extintores de CO2 e Pó Químico para frota fabril.'
   },
   {
     id: 'alarme-central',
     title: 'Central de alarme contra incêndio',
     category: 'Sistemas',
-    image: 'https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80&w=800',
+    image: 'alarme_central',
     description: 'Instalação de painel inteligente endereçável com sensores óticos industriais em área comercial.'
   },
   {
@@ -115,7 +115,7 @@ export const PROJECTS: ProjectItem[] = [
     id: 'treino-brigada',
     title: 'Treino de brigada de incêndio',
     category: 'Consultoria',
-    image: 'https://images.unsplash.com/photo-1508873696983-2df519f0397e?auto=format&fit=crop&q=80&w=800',
+    image: 'treino_brigada',
     description: 'Formação presencial com simulação realista e combate ao fogo ao vivo para colaboradores industriais.'
   }
 ];

@@ -14,9 +14,14 @@ import { MessageSquare, Flame, X, MessageCircle, Send } from 'lucide-react';
 
 // Formatted asset paths from image generation tool
 const ASSET_IMAGES = {
-  hero_brand_safety: "/src/assets/images/hero_brand_safety_1781257686063.jpg",
+  hero_brand_safety: "/src/assets/images/regenerated_image_1781259468522.png",
+  hero_inspector_bg: "/src/assets/images/hero_inspector_bg_1781259781550.jpg",
   extinguishers_row: "/src/assets/images/extinguishers_row_1781256643263.jpg",
-  pest_control_warehouse: "/src/assets/images/pest_control_warehouse_1781256663557.jpg"
+  pest_control_warehouse: "/src/assets/images/pest_control_warehouse_1781256663557.jpg",
+  sprinklers_industrial: "/src/assets/images/regenerated_image_1781260331165.webp",
+  recarga_extintores_massa: "/src/assets/images/regenerated_image_1781266623837.png",
+  alarme_central: "/src/assets/images/regenerated_image_1781266740624.png",
+  treino_brigada: "/src/assets/images/regenerated_image_1781267265664.png"
 };
 
 export default function App() {
@@ -52,7 +57,7 @@ export default function App() {
       {/* Sections scroll layouts */}
       <main>
         {/* Hero Section */}
-        <Hero onOpenBudgetModal={() => handleOpenBudget()} heroImg={ASSET_IMAGES.hero_brand_safety} />
+        <Hero onOpenBudgetModal={() => handleOpenBudget()} heroImg={ASSET_IMAGES.hero_inspector_bg} />
 
         {/* About Section */}
         <About aboutImg={ASSET_IMAGES.extinguishers_row} />
@@ -65,6 +70,10 @@ export default function App() {
           onOpenBudgetModal={(id) => handleOpenBudget(id)} 
           pestControlImg={ASSET_IMAGES.pest_control_warehouse}
           extinguishersRowImg={ASSET_IMAGES.extinguishers_row} 
+          sprinklersIndustrialImg={ASSET_IMAGES.sprinklers_industrial}
+          recargaExtintoresMassaImg={ASSET_IMAGES.recarga_extintores_massa}
+          alarmeCentralImg={ASSET_IMAGES.alarme_central}
+          treinoBrigadaImg={ASSET_IMAGES.treino_brigada}
         />
 
         {/* Value Propositions Group */}

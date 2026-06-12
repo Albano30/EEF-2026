@@ -7,9 +7,13 @@ interface ProjectsProps {
   onOpenBudgetModal: (serviceId?: string) => void;
   pestControlImg: string;
   extinguishersRowImg: string;
+  sprinklersIndustrialImg: string;
+  recargaExtintoresMassaImg: string;
+  alarmeCentralImg: string;
+  treinoBrigadaImg: string;
 }
 
-export default function Projects({ onOpenBudgetModal, pestControlImg, extinguishersRowImg }: ProjectsProps) {
+export default function Projects({ onOpenBudgetModal, pestControlImg, extinguishersRowImg, sprinklersIndustrialImg, recargaExtintoresMassaImg, alarmeCentralImg, treinoBrigadaImg }: ProjectsProps) {
   const [activeFilter, setActiveFilter] = useState<string>('Todos');
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
@@ -23,6 +27,18 @@ export default function Projects({ onOpenBudgetModal, pestControlImg, extinguish
     }
     if (proj.image === 'extinguishers_row') {
       return extinguishersRowImg;
+    }
+    if (proj.image === 'sprinklers_industrial') {
+      return sprinklersIndustrialImg;
+    }
+    if (proj.image === 'recarga_extintores_massa') {
+      return recargaExtintoresMassaImg;
+    }
+    if (proj.image === 'alarme_central') {
+      return alarmeCentralImg;
+    }
+    if (proj.image === 'treino_brigada') {
+      return treinoBrigadaImg;
     }
     return proj.image;
   };

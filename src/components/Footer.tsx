@@ -46,8 +46,14 @@ export default function Footer() {
             
             {/* Logo */}
             <div className="flex items-center space-x-2.5">
-              <div className="flex items-center justify-center h-9 w-9 bg-red-600 rounded-lg shadow-md shadow-red-950/20">
-                <Flame className="h-5 w-5 text-white" />
+              <div className="flex items-center justify-center h-10 w-16 bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden shadow-md shadow-red-950/10">
+                <img 
+                  id="footer-logo-brand-img"
+                  src="/src/assets/images/regenerated_image_1781259468522.png" 
+                  alt="EEF Essimela Logo" 
+                  className="h-full w-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center space-x-1.5 leading-none">

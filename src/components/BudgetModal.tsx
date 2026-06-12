@@ -75,11 +75,9 @@ export default function BudgetModal({ isOpen, onClose, initialServiceId }: Budge
   };
 
   const handleSendWhatsApp = () => {
-    const serviceLabels = formData.services
-      = SERVICES.filter(s => formData.services.includes(s.id)).map(s => s.title).join(', ');
+    const serviceLabels = SERVICES.filter(s => formData.services.includes(s.id)).map(s => s.title).join(', ');
     
-    const estimate = calculateEstimate();
-    const text = `Olá Essimela! Solicito um orçamento para:\n\n` +
+    const text = `Olá Essimela! Solicito um orçamento técnico para:\n\n` +
       `*Nome:* ${formData.name}\n` +
       `*Telefone:* ${formData.phone}\n` +
       `*Email:* ${formData.email}\n` +
@@ -88,7 +86,7 @@ export default function BudgetModal({ isOpen, onClose, initialServiceId }: Budge
       (hasRecarga ? `*Nº Extintores:* ${extinguisherCount} unidades\n` : '') +
       (hasFumigacaoOrSistemas ? `*Área aproximada:* ${areaSize} m²\n` : '') +
       `*Mensagem:* ${formData.message}\n\n` +
-      `*Estimador Rápido:* Aproximadamente ${estimate.toLocaleString()} MZN\n`;
+      `Aguardando contacto técnico para envio de proposta e levantamento.`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://wa.me/${COMPANY_DETAILS.whatsapp}?text=${encodedText}`;
@@ -159,9 +157,9 @@ export default function BudgetModal({ isOpen, onClose, initialServiceId }: Budge
               {/* Step 2: Interactive metrics depending on service */}
               {(hasRecarga || hasFumigacaoOrSistemas) && (
                 <div className="p-4 bg-neutral-950/60 border border-neutral-800/80 rounded-xl space-y-4">
-                  <div className="flex items-center space-x-1.5 text-xs text-red-400 font-medium tracking-wide uppercase">
+                  <div className="flex items-center space-x-1.5 text-xs text-red-500 font-medium tracking-wide uppercase">
                     <Sparkles className="h-3.5 w-3.5" />
-                    <span>Estimador de Custo Rápido (Opcional)</span>
+                    <span>Dados do Local & Quantidades</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {hasRecarga && (
@@ -198,16 +196,6 @@ export default function BudgetModal({ isOpen, onClose, initialServiceId }: Budge
                         </div>
                       </div>
                     )}
-                  </div>
-                  
-                  {/* Dynamic Pricing Counter */}
-                  <div className="flex items-center justify-between p-3 bg-red-950/15 rounded-lg border border-red-900/30">
-                    <div className="text-xs text-neutral-400">
-                      Estimativa preliminar básica de valor:
-                    </div>
-                    <div className="text-lg font-mono font-bold text-red-400">
-                      ~ {calculateEstimate().toLocaleString()} MZN
-                    </div>
                   </div>
                 </div>
               )}
@@ -282,9 +270,9 @@ export default function BudgetModal({ isOpen, onClose, initialServiceId }: Budge
 
               {/* Note */}
               <div className="flex items-start space-x-2.5 text-xs text-neutral-400 bg-neutral-950/40 p-3.5 border border-neutral-800/60 rounded-xl">
-                <AlertCircle className="h-4.5 w-4.5 text-yellow-500 shrink-0 mt-0.5" />
+                <AlertCircle className="h-4.5 w-4.5 text-red-500 shrink-0 mt-0.5" />
                 <span>
-                  O valor calculado é uma estimativa preliminar baseada em parâmetros padronizados de manutenção contra incêndio e dedetização. O preço definitivo poderá variar conforme o levantamento de segurança oficial in loco.
+                  O nosso pessoal técnico analisará o seu pedido em pormenor, podendo sugerir um levantamento de segurança in loco inteiramente gratuito em Nampula e províncias vizinhas para desenhar a solução técnica definitiva.
                 </span>
               </div>
 
@@ -315,11 +303,8 @@ export default function BudgetModal({ isOpen, onClose, initialServiceId }: Budge
               <div className="space-y-2 max-w-md">
                 <h3 className="font-display font-bold text-2xl text-white">Dados Recebidos com Sucesso!</h3>
                 <p className="text-sm text-neutral-400 leading-relaxed">
-                  Agradecemos o seu contacto, <span className="font-semibold text-white">{formData.name}</span>. Temos sua estimativa simulada no valor aproximado de:
+                  Agradecemos o seu contacto, <span className="font-semibold text-white">{formData.name}</span>. Registámos os detalhes técnicos solicitados para o seu orçamento e daremos prioridade imediata à sua cotação.
                 </p>
-                <div className="inline-block px-5 py-2 mt-2 bg-neutral-950 border border-neutral-800 rounded-xl text-2xl font-mono font-bold text-red-400">
-                  {calculateEstimate().toLocaleString()} MZN
-                </div>
               </div>
 
               <div className="p-4 bg-neutral-950 border border-neutral-850 rounded-xl max-w-md text-xs text-neutral-400 leading-relaxed">
