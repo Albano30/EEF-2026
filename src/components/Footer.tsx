@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8 text-neutral-400 font-sans" id="footer">
+    <footer className="bg-white border-t border-neutral-200 pt-16 pb-8 text-neutral-600 font-sans" id="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid info */}
@@ -47,7 +47,7 @@ export default function Footer() {
             
             {/* Logo */}
             <div className="flex items-center space-x-2.5">
-              <div className="flex items-center justify-center h-10 w-16 bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden shadow-md shadow-red-950/10">
+              <div className="flex items-center justify-center h-10 w-16 bg-white border border-neutral-200 rounded-lg overflow-hidden shadow-sm shadow-red-100/10">
                 <img 
                   id="footer-logo-brand-img"
                   src={logoImg} 
@@ -58,24 +58,24 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center space-x-1.5 leading-none">
-                  <span className="font-display font-black text-base tracking-wider text-white">EEF</span>
-                  <span className="h-3 w-0.5 bg-neutral-700" />
-                  <span className="font-sans font-semibold text-[10px] tracking-wider text-neutral-400 uppercase">Segurança</span>
+                  <span className="font-display font-black text-base tracking-wider text-neutral-900">EEF</span>
+                  <span className="h-3 w-0.5 bg-neutral-300" />
+                  <span className="font-sans font-semibold text-[10px] tracking-wider text-neutral-500 uppercase">Segurança</span>
                 </div>
                 <span className="font-display font-bold text-[10px] tracking-widest text-red-500 uppercase">ESSIMELA</span>
               </div>
             </div>
 
-            <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-neutral-600 leading-relaxed max-w-sm">
               Mais de uma década garantindo proteção contra incêndio ativa e preventiva, manutenção técnica de extintores homologados, desinfestações gerais higiénicas de armazéns logísticos e industriais em todas as províncias do norte de Moçambique.
             </p>
 
             {/* Compliance badges */}
             <div className="pt-2 flex items-center space-x-3 text-[10px] uppercase font-mono font-bold text-neutral-500">
-              <div className="px-2 py-1 bg-neutral-900 border border-neutral-850 rounded">
+              <div className="px-2 py-1 bg-neutral-50 border border-neutral-200 rounded">
                 Proteção Civil Moçambique
               </div>
-              <div className="px-2 py-1 bg-neutral-900 border border-neutral-850 rounded">
+              <div className="px-2 py-1 bg-neutral-50 border border-neutral-200 rounded">
                 INAE Aprovado
               </div>
             </div>
@@ -84,14 +84,14 @@ export default function Footer() {
 
           {/* Column 2 - Links (Col Span 2) */}
           <div className="lg:col-span-2">
-            <h4 className="font-display font-bold text-white text-xs tracking-wider uppercase mb-5">Atalhos</h4>
+            <h4 className="font-display font-bold text-neutral-900 text-xs tracking-wider uppercase mb-5">Atalhos</h4>
             <ul className="space-y-2.5">
               {links.map(link => (
                 <li key={link.label}>
                   <a 
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-xs hover:text-white flex items-center space-x-1 hover:translate-x-1 transition-all"
+                    className="text-xs hover:text-red-650 flex items-center space-x-1 hover:translate-x-1 transition-all"
                   >
                     <ChevronRight className="h-3 w-3 text-red-500" />
                     <span>{link.label}</span>
@@ -103,14 +103,14 @@ export default function Footer() {
 
           {/* Column 3 - Services (Col Span 3) */}
           <div className="lg:col-span-3">
-            <h4 className="font-display font-bold text-white text-xs tracking-wider uppercase mb-5">Serviços Oficiais</h4>
+            <h4 className="font-display font-bold text-neutral-900 text-xs tracking-wider uppercase mb-5">Serviços Oficiais</h4>
             <ul className="space-y-2.5">
               {servs.map(srv => (
                 <li key={srv.label}>
                   <a 
                     href={srv.href}
                     onClick={(e) => handleLinkClick(e, srv.href)}
-                    className="text-xs hover:text-white flex items-center space-x-1 hover:translate-x-1 transition-all"
+                    className="text-xs hover:text-red-505 flex items-center space-x-1 hover:translate-x-1 transition-all"
                   >
                     <ChevronRight className="h-3 w-3 text-red-500" />
                     <span>{srv.label}</span>
@@ -122,7 +122,7 @@ export default function Footer() {
 
           {/* Column 4 - Contact and Legal (Col Span 3) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-display font-bold text-white text-xs tracking-wider uppercase mb-5">Sede & Jurisdição</h4>
+            <h4 className="font-display font-bold text-neutral-900 text-xs tracking-wider uppercase mb-5">Sede & Jurisdição</h4>
             
             <div className="space-y-3 text-xs leading-relaxed">
               <div className="flex items-start space-x-2.5">
@@ -142,8 +142,8 @@ export default function Footer() {
                 <span>{COMPANY_DETAILS.email}</span>
               </div>
 
-              <div className="flex items-start space-x-2.5 pt-2 border-t border-neutral-900 text-neutral-500 font-mono">
-                <FileText className="h-4 w-4 text-neutral-600 shrink-0" />
+              <div className="flex items-start space-x-2.5 pt-2 border-t border-neutral-100 text-neutral-500 font-mono">
+                <FileText className="h-4 w-4 text-neutral-400 shrink-0" />
                 <span>NUIT Comercial: {COMPANY_DETAILS.nuit}</span>
               </div>
             </div>
@@ -153,16 +153,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom border and copyright terms bar */}
-        <div className="border-t border-neutral-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-500 space-y-4 sm:space-y-0 text-center sm:text-left">
+        <div className="border-t border-neutral-150 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-500 space-y-4 sm:space-y-0 text-center sm:text-left">
           <div>
             <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. Todos os direitos reservados.</p>
-            <p className="mt-0.5 text-neutral-600">Proibida a reprodução de marca, slogan ou media sem autorização formal.</p>
+            <p className="mt-0.5 text-neutral-400">Proibida a reprodução de marca, slogan ou media sem autorização formal.</p>
           </div>
 
           <div className="flex items-center space-x-4">
-            <span className="hover:text-neutral-400 transition-colors">Termos de Uso</span>
-            <span className="h-3 w-px bg-neutral-800" />
-            <span className="hover:text-neutral-400 transition-colors">Política de Privacidade</span>
+            <span className="hover:text-red-650 cursor-pointer transition-colors">Termos de Uso</span>
+            <span className="h-3 w-px bg-neutral-200" />
+            <span className="hover:text-red-650 cursor-pointer transition-colors">Política de Privacidade</span>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BudgetModal from './components/BudgetModal';
 import { COMPANY_DETAILS } from './data';
-import { MessageSquare, Flame, X, MessageCircle, Send } from 'lucide-react';
+import { MessageSquare, Flame, X, MessageCircle, Send, ArrowUp } from 'lucide-react';
 
 // ES Module imports for images to ensure Vercel and production builds process and bundle assets correctly
 import hero_brand_safety from './assets/images/regenerated_image_1781259468522.png';
@@ -39,6 +39,23 @@ export default function App() {
   const [initialServiceId, setInitialServiceId] = useState<string | undefined>(undefined);
   const [isWpChatOpen, setIsWpChatOpen] = useState(false);
   const [wpMessage, setWpMessage] = useState('');
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleOpenBudget = (serviceId?: string) => {
     setInitialServiceId(serviceId);
@@ -56,10 +73,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-200 antialiased selection:bg-red-600 selection:text-white" id="main-app">
+    <div className="min-h-screen bg-neutral-50 text-neutral-800 antialiased selection:bg-red-600 selection:text-white" id="main-app">
       
       {/* Decorative top lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent z-50 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-red-500/20 to-transparent z-50 pointer-events-none" />
 
       {/* Main Header / Navigation */}
       <Navbar onOpenBudgetModal={() => handleOpenBudget()} />
@@ -111,7 +128,7 @@ export default function App() {
         
         {/* Floating Quick Dialog Box */}
         {isWpChatOpen && (
-          <div className="bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl w-80 overflow-hidden flex flex-col md:w-85 animate-scale-up" id="wp-quick-chat">
+          <div className="bg-white border border-neutral-200 rounded-2xl shadow-2xl w-80 overflow-hidden flex flex-col md:w-85 animate-scale-up" id="wp-quick-chat">
             
             {/* Header part */}
             <div className="bg-emerald-600 px-4 py-3.5 flex items-center justify-between text-white">
@@ -138,21 +155,21 @@ export default function App() {
             </div>
 
             {/* Simulated Chat feed */}
-            <div className="p-4 bg-neutral-950/60 flex-1 space-y-3.5 max-h-48 overflow-y-auto">
-              <div className="bg-neutral-900 border border-neutral-850 p-3 rounded-2xl rounded-tl-none text-xs text-neutral-300 leading-relaxed max-w-[85%]">
+            <div className="p-4 bg-neutral-50 flex-1 space-y-3.5 max-h-48 overflow-y-auto">
+              <div className="bg-white border border-neutral-200 p-3 rounded-2xl rounded-tl-none text-xs text-neutral-700 leading-relaxed max-w-[85%] shadow-sm">
                 Olá! Sente-se à vontade para nos enviar qualquer dúvida técnica de incêndio ou orçamentos. Responderemos de imediato! 🚀
               </div>
             </div>
 
             {/* Action input bar */}
-            <form onSubmit={handleSendWhatsAppChat} className="p-2 border-t border-neutral-855 bg-neutral-900 flex items-center space-x-1.5">
+            <form onSubmit={handleSendWhatsAppChat} className="p-2 border-t border-neutral-200 bg-neutral-50 flex items-center space-x-1.5">
               <input 
                 type="text"
                 required
                 placeholder="Escreva sua pergunta aqui..."
                 value={wpMessage}
                 onChange={(e) => setWpMessage(e.target.value)}
-                className="flex-1 bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-500 placeholder:text-neutral-650"
+                className="flex-1 bg-white border border-neutral-200 rounded-xl px-3 py-1.5 text-xs text-neutral-850 focus:outline-none focus:border-emerald-500 placeholder:text-neutral-400"
               />
               <button 
                 type="submit"
@@ -165,11 +182,23 @@ export default function App() {
           </div>
         )}
 
+        {/* Floating Back To Top Button - styled with Montserrat font styling */}
+        {showScrollTop && (
+          <button
+            onClick={scrollToTop}
+            className="h-12 w-12 rounded-full bg-white/95 hover:bg-red-600 border border-neutral-200 hover:border-red-650 text-neutral-600 hover:text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+            title="Voltar ao início"
+            id="back-to-top-btn"
+          >
+            <ArrowUp className="h-5 w-5 transform group-hover:-translate-y-1 transition-transform duration-300" />
+          </button>
+        )}
+
         {/* Core Widget Circular Green Trigger */}
         <button
           onClick={() => setIsWpChatOpen(!isWpChatOpen)}
           className={`h-14 w-14 rounded-full flex items-center justify-center text-white shadow-2xl transition-all hover:scale-105 active:scale-95 cursor-pointer relative ${
-            isWpChatOpen ? 'bg-neutral-800 rotate-90' : 'bg-emerald-600 hover:bg-emerald-500 hover:shadow-emerald-950/20'
+            isWpChatOpen ? 'bg-neutral-250 text-neutral-800 rotate-90 border border-neutral-300 shadow-lg' : 'bg-emerald-600 hover:bg-emerald-500 hover:shadow-emerald-950/20'
           }`}
           title="Fale connosco no WhatsApp"
           id="wp-trigger-btn"

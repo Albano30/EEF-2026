@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contato" className="py-24 bg-neutral-900 border-t border-neutral-850">
+    <section id="contato" className="py-24 bg-neutral-50 border-t border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-start">
@@ -37,10 +37,10 @@ export default function Contact() {
               <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block">
                 Fale Connosco
               </span>
-              <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight leading-none">
+              <h2 className="font-display font-black text-3xl sm:text-4xl text-neutral-900 tracking-tight leading-none animate-fade-in">
                 Solicite o seu orçamento personalizado
               </h2>
-              <p className="font-sans text-neutral-400 text-sm sm:text-base leading-relaxed">
+              <p className="font-sans text-neutral-650 text-sm sm:text-base leading-relaxed">
                 Estamos prontos para atender a sua empresa, obra, armazém ou condomínio residencial em Nampula, Nacala e arredores. Entre em contacto para obter preços oficiais.
               </p>
             </div>
@@ -49,31 +49,31 @@ export default function Contact() {
             <div className="space-y-6">
               
               {/* Address card */}
-              <div className="flex items-start space-x-4 p-4 bg-neutral-950/65 border border-neutral-850 rounded-xl">
-                <div className="p-2.5 bg-red-950/40 text-red-500 rounded-lg shrink-0 mt-0.5 border border-red-900/10">
+              <div className="flex items-start space-x-4 p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
+                <div className="p-2.5 bg-red-50 text-red-650 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-wider">Endereço Operacional</h4>
-                  <p className="text-sm font-sans text-white font-medium mt-1 leading-relaxed">
+                  <h4 className="text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider">Endereço Operacional</h4>
+                  <p className="text-sm font-sans text-neutral-850 font-bold mt-1 leading-relaxed">
                     {COMPANY_DETAILS.address}
                   </p>
                 </div>
               </div>
 
               {/* Phone card */}
-              <div className="flex items-start space-x-4 p-4 bg-neutral-950/65 border border-neutral-850 rounded-xl">
-                <div className="p-2.5 bg-red-950/40 text-red-500 rounded-lg shrink-0 mt-0.5 border border-red-900/10">
+              <div className="flex items-start space-x-4 p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
+                <div className="p-2.5 bg-red-50 text-red-650 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-wider">Telefone e Apoio Rápido</h4>
+                  <h4 className="text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider">Telefone e Apoio Rápido</h4>
                   <div className="flex flex-col mt-1 space-y-0.5">
                     {COMPANY_DETAILS.phones.map((phone, i) => (
                       <a 
                         key={i} 
                         href={`tel:${phone.replace(/\s/g, '')}`}
-                        className="text-sm font-sans text-white font-medium hover:text-red-400 transition-colors"
+                        className="text-sm font-sans text-neutral-805 font-bold hover:text-red-600 transition-colors"
                       >
                         {phone}
                       </a>
@@ -83,15 +83,15 @@ export default function Contact() {
               </div>
 
               {/* Email card */}
-              <div className="flex items-start space-x-4 p-4 bg-neutral-950/65 border border-neutral-850 rounded-xl">
-                <div className="p-2.5 bg-red-950/40 text-red-500 rounded-lg shrink-0 mt-0.5 border border-red-900/10">
+              <div className="flex items-start space-x-4 p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
+                <div className="p-2.5 bg-red-50 text-red-650 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-wider">Correio Eletrónico Coletivo</h4>
+                  <h4 className="text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider">Correio Eletrónico Coletivo</h4>
                   <a 
                     href={`mailto:${COMPANY_DETAILS.email}`} 
-                    className="text-sm font-sans text-white font-medium hover:text-red-400 transition-colors block mt-1"
+                    className="text-sm font-sans text-neutral-805 font-bold hover:text-red-400 transition-colors block mt-1"
                   >
                     {COMPANY_DETAILS.email}
                   </a>
@@ -105,10 +105,10 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={handleWhatsAppChat}
-                className="w-full sm:w-auto px-6 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl flex items-center justify-center space-x-2.5 shadow-lg shadow-emerald-950/30 transition-all hover:-translate-y-0.5 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl flex items-center justify-center space-x-2.5 shadow hover:-translate-y-0.5 transition-all cursor-pointer"
                 id="contact-whatsapp-btn"
               >
-                <MessageSquare className="h-5 w-5" />
+                <MessageSquare className="h-5 w-5 animate-pulse" />
                 <span>Conversar no WhatsApp Comercial</span>
               </button>
             </div>
@@ -116,11 +116,11 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Contact Form Box (Col Span 7) */}
-          <div className="lg:col-span-7 bg-neutral-950 border border-neutral-850 p-6 sm:p-8 rounded-2xl shadow-2xl relative" id="contact-form-wrapper">
+          <div className="lg:col-span-7 bg-white border border-neutral-200 p-6 sm:p-8 rounded-2xl shadow-xl relative" id="contact-form-wrapper">
             
             <div className="absolute top-0 right-8 transform -translate-y-1/2">
-              <div className="bg-neutral-900 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase flex items-center space-x-1.5 shadow">
-                <span className="h-2 w-2 rounded-full bg-green-500 animate-ping inline-block" />
+              <div className="bg-neutral-50 border border-neutral-200 text-neutral-600 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase flex items-center space-x-1.5 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-green-550 animate-ping inline-block" />
                 <span>Resposta em até 24h</span>
               </div>
             </div>
@@ -129,63 +129,63 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 
                 <div className="space-y-1">
-                  <h3 className="font-display font-bold text-xl text-white">Envie uma mensagem direta</h3>
-                  <p className="text-xs text-neutral-400">Preencha o formulário abaixo e nós entraremos em contacto por telefone ou email.</p>
+                  <h3 className="font-display font-bold text-xl text-neutral-900">Envie uma mensagem direta</h3>
+                  <p className="text-xs text-neutral-500">Preencha o formulário abaixo e nós entraremos em contacto por telefone ou email.</p>
                 </div>
 
                 <div className="space-y-4 pt-2">
                   
                   {/* Name field */}
                   <div className="space-y-1">
-                    <label className="text-xs text-neutral-400 block font-semibold">Seu nome ou Razão Social *</label>
+                    <label className="text-xs text-neutral-650 block font-semibold">Seu nome ou Razão Social *</label>
                     <input 
                       type="text" 
                       required
                       placeholder="Ex: Albano Luís"
                       value={formData.name}
                       onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
-                      className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-600 transition-all"
+                      className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all shadow-sm"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Email field */}
                     <div className="space-y-1">
-                      <label className="text-xs text-neutral-400 block font-semibold">Email *</label>
+                      <label className="text-xs text-neutral-650 block font-semibold">Email *</label>
                       <input 
                         type="email" 
                         required
                         placeholder="Ex: albano@exemplo.com"
                         value={formData.email}
                         onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
-                        className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-600 transition-all"
+                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all shadow-sm"
                       />
                     </div>
                     
                     {/* Phone field */}
                     <div className="space-y-1">
-                      <label className="text-xs text-neutral-400 block font-semibold">Telefone de Contacto *</label>
+                      <label className="text-xs text-neutral-650 block font-semibold">Telefone de Contacto *</label>
                       <input 
                         type="tel" 
                         required
                         placeholder="Ex: +258 849 378 149"
                         value={formData.phone}
                         onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
-                        className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-600 transition-all"
+                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all shadow-sm"
                       />
                     </div>
                   </div>
 
                   {/* Message field */}
                   <div className="space-y-1">
-                    <label className="text-xs text-neutral-400 block font-semibold">Escreva sua mensagem ou dúvida técnica *</label>
+                    <label className="text-xs text-neutral-650 block font-semibold">Escreva sua mensagem ou dúvida técnica *</label>
                     <textarea 
                       rows={4}
                       required
                       placeholder="Indique como podemos ajudá-lo hoje: se precisa de inspeção, extintor novo, recarga de cilindro de CO2 ou dedetização..."
                       value={formData.message}
                       onChange={(e) => setFormData(p => ({ ...p, message: e.target.value }))}
-                      className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-600 transition-all resize-none"
+                      className="w-full bg-white border border-neutral-200 rounded-xl p-4 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all resize-none shadow-sm"
                     />
                   </div>
 
@@ -195,7 +195,7 @@ export default function Contact() {
                 <div className="pt-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-3 bg-red-650 hover:bg-red-700 text-white font-bold text-sm rounded-xl flex items-center justify-center space-x-2 shadow-lg shadow-red-950/30 hover:-translate-y-0.5 transition-all cursor-pointer"
+                    className="w-full sm:w-auto px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl flex items-center justify-center space-x-2 shadow hover:-translate-y-0.5 transition-all cursor-pointer"
                     id="contact-submit"
                   >
                     <span>Enviar mensagem direta</span>
@@ -204,8 +204,8 @@ export default function Contact() {
                 </div>
 
                 {/* Regulatory License note */}
-                <div className="flex items-start space-x-2 text-[10px] text-neutral-500 pt-2 border-t border-neutral-900">
-                  <ShieldAlert className="h-3.5 w-3.5 text-neutral-600 shrink-0 mt-0.5" />
+                <div className="flex items-start space-x-2 text-[10px] text-neutral-605 pt-2 border-t border-neutral-100">
+                  <ShieldAlert className="h-3.5 w-3.5 text-neutral-400 shrink-0 mt-0.5" />
                   <span>Seus dados de contacto são protegidos de forma inteiramente confidencial pela Essimela e utilizados unicamente para elaboração da vossa proposta comercial.</span>
                 </div>
 
@@ -213,13 +213,13 @@ export default function Contact() {
             ) : (
               // Success feedback
               <div className="py-12 text-center space-y-6 flex flex-col items-center animate-fade-in" id="contact-success-panel">
-                <div className="h-16 w-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center border border-red-500/25">
+                <div className="h-16 w-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center border border-red-200/50">
                   <CheckCircle2 className="h-10 w-10 animate-bounce" />
                 </div>
                 <div className="space-y-2 max-w-sm">
-                  <h3 className="font-display font-bold text-2xl text-white">Mensagem Enviada!</h3>
-                  <p className="text-sm text-neutral-400 leading-relaxed">
-                    Olá <span className="font-semibold text-white">{formData.name}</span>, recebemos sua mensagem. Um consultor técnico da nossa equipa em Nampula entrará em contacto muito brevemente.
+                  <h3 className="font-display font-bold text-2xl text-neutral-900">Mensagem Enviada!</h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    Olá <span className="font-bold text-neutral-900">{formData.name}</span>, recebemos sua mensagem. Um consultor técnico da nossa equipa em Nampula entrará em contacto muito brevemente.
                   </p>
                 </div>
                 
@@ -228,7 +228,7 @@ export default function Contact() {
                     setFormData({ name: '', email: '', phone: '', message: '' });
                     setIsSubmitted(false);
                   }}
-                  className="px-5 py-2.5 border border-neutral-800 hover:border-neutral-600 text-neutral-350 hover:text-white font-semibold text-xs rounded-xl transition-all cursor-pointer"
+                  className="px-5 py-2.5 border border-neutral-300 hover:border-neutral-400 text-neutral-700 hover:text-neutral-900 font-semibold text-xs rounded-xl transition-all cursor-pointer"
                 >
                   Enviar Outra Mensagem
                 </button>
