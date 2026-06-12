@@ -12,16 +12,26 @@ import BudgetModal from './components/BudgetModal';
 import { COMPANY_DETAILS } from './data';
 import { MessageSquare, Flame, X, MessageCircle, Send } from 'lucide-react';
 
-// Formatted asset paths from image generation tool
+// ES Module imports for images to ensure Vercel and production builds process and bundle assets correctly
+import hero_brand_safety from './assets/images/regenerated_image_1781259468522.png';
+import hero_inspector_bg from './assets/images/hero_inspector_bg_1781259781550.jpg';
+import extinguishers_row from './assets/images/extinguishers_row_1781256643263.jpg';
+import pest_control_warehouse from './assets/images/pest_control_warehouse_1781256663557.jpg';
+import sprinklers_industrial from './assets/images/regenerated_image_1781260331165.webp';
+import recarga_extintores_massa from './assets/images/regenerated_image_1781266623837.png';
+import alarme_central from './assets/images/regenerated_image_1781266740624.png';
+import treino_brigada from './assets/images/regenerated_image_1781267265664.png';
+
+// Formatted asset paths mapped to ESM imported objects
 const ASSET_IMAGES = {
-  hero_brand_safety: "/src/assets/images/regenerated_image_1781259468522.png",
-  hero_inspector_bg: "/src/assets/images/hero_inspector_bg_1781259781550.jpg",
-  extinguishers_row: "/src/assets/images/extinguishers_row_1781256643263.jpg",
-  pest_control_warehouse: "/src/assets/images/pest_control_warehouse_1781256663557.jpg",
-  sprinklers_industrial: "/src/assets/images/regenerated_image_1781260331165.webp",
-  recarga_extintores_massa: "/src/assets/images/regenerated_image_1781266623837.png",
-  alarme_central: "/src/assets/images/regenerated_image_1781266740624.png",
-  treino_brigada: "/src/assets/images/regenerated_image_1781267265664.png"
+  hero_brand_safety,
+  hero_inspector_bg,
+  extinguishers_row,
+  pest_control_warehouse,
+  sprinklers_industrial,
+  recarga_extintores_massa,
+  alarme_central,
+  treino_brigada
 };
 
 export default function App() {

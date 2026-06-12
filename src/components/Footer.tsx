@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flame, Shield, MapPin, Phone, Mail, FileText, ChevronRight } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
+import logoImg from '../assets/images/regenerated_image_1781259468522.png';
 
 export default function Footer() {
   const links = [
@@ -49,7 +50,7 @@ export default function Footer() {
               <div className="flex items-center justify-center h-10 w-16 bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden shadow-md shadow-red-950/10">
                 <img 
                   id="footer-logo-brand-img"
-                  src="/src/assets/images/regenerated_image_1781259468522.png" 
+                  src={logoImg} 
                   alt="EEF Essimela Logo" 
                   className="h-full w-full object-cover"
                   referrerPolicy="no-referrer"

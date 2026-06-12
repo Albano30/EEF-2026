@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Flame, Shield, HelpCircle, PhoneCall } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data';
+import logoImg from '../assets/images/regenerated_image_1781259468522.png';
 
 interface NavbarProps {
   onOpenBudgetModal: () => void;
@@ -61,7 +62,7 @@ export default function Navbar({ onOpenBudgetModal }: NavbarProps) {
             <div className="relative flex items-center justify-center h-10 w-16 bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden shadow-lg shadow-red-950/10 group-hover:scale-105 transition-transform">
               <img 
                 id="nav-logo-brand-img"
-                src="/src/assets/images/regenerated_image_1781259468522.png" 
+                src={logoImg} 
                 alt="EEF Essimela Logo" 
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
