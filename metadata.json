@@ -1,0 +1,6 @@
+{
+  "name": "Essimela Extintores",
+  "description": "Proteção contra incêndio, fumigação e controle de pragas em Moçambique.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
