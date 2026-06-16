@@ -161,11 +161,11 @@ export default function Contact() {
                   
                   {/* Name field */}
                   <div className="space-y-1">
-                    <label className="text-xs text-neutral-600 block font-semibold">Seu nome ou Razão Social *</label>
+                    <label className="text-xs text-neutral-600 block font-semibold">Seu nome ou Empresa *</label>
                     <input 
                       type="text" 
                       required
-                      placeholder="Ex: Albano Luís"
+                      placeholder="Ex: Fernado Dias"
                       value={formData.name}
                       onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
                       className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-800 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-400 transition-all shadow-sm"
@@ -179,7 +179,7 @@ export default function Contact() {
                       <input 
                         type="email" 
                         required
-                        placeholder="Ex: albano@exemplo.com"
+                        placeholder="Ex: fernando@exemplo.com"
                         value={formData.email}
                         onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
                         className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-800 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-400 transition-all shadow-sm"

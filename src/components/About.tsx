@@ -40,7 +40,7 @@ export default function About({ aboutImg }: AboutProps) {
             Tradição em segurança, foco absoluto em proteger.
           </h2>
           <p className="font-sans text-neutral-600 leading-relaxed text-base sm:text-lg">
-            A <span className="font-bold text-neutral-900">Essimela Extintores & Fumigações</span> nasceu de uma sólida visão de salvar vidas e prevenir catástrofes industriais e sanitárias. Somos habilitados e registados para atuar em todo o território nacional. Com sede operacional na <span className="text-red-600 font-semibold">Cidade de Nampula</span> e delegações em <span className="text-neutral-900 font-semibold">Nacala</span>, oferecemos uma infraestrutura de ponta e técnicos formados para prover segurança total 24 horas por dia.
+            A <span className="font-bold text-neutral-900">Essimela Extintores & Fumigações</span> nasceu de uma sólida visão de salvar vidas e prevenir catástrofes industriais e sanitárias. Somos habilitados e registados para atuar em todo o território nacional. Com sede operacional na <span className="text-red-600 font-semibold">Cidade de Nampula</span> e delegações em <span className="text-neutral-900 font-semibold">Nacala</span>, oferecemos <span className="text-red-600 font-semibold">Serviços de ponta</span> e técnicos formados para prover segurança total 24 horas por dia.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function About({ aboutImg }: AboutProps) {
                 </div>
                 <div>
                   <div className="text-xs font-mono font-bold tracking-wide uppercase text-red-600">EEF SEGURANÇA TOTAL</div>
-                  <div className="text-[11px] text-neutral-600 font-sans mt-0.5 font-semibold">Equipamentos 100% Homologados pela Proteção Civil</div>
+                  <div className="text-[11px] text-neutral-600 font-sans mt-0.5 font-semibold">Equipamentos 100% Certificados</div>
                 </div>
               </div>
             </div>
