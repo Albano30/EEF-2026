@@ -36,11 +36,12 @@ export default function Hero({ onOpenBudgetModal, heroImg }: HeroProps) {
         <img 
           src={heroImg} 
           alt="Bombeiro Profissional em Atuação" 
-          className="w-full h-full object-cover object-center opacity-20 scale-105 animate-[pulse_8s_infinite_alternate]"
+          className="w-full h-full object-cover object-center opacity-60 scale-100 transition-transform duration-700"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-radial-at-c from-transparent via-neutral-50/70 to-neutral-50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-50 via-neutral-50/30 to-neutral-100/40" />
+        {/* Soft elegant gradient overlays to ensure text remains perfectly readable while making the image pop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/30 via-neutral-50/65 to-neutral-50" />
+        <div className="absolute inset-0 bg-radial-at-t from-transparent via-neutral-50/25 to-neutral-50/80" />
       </div>
 
       {/* Grid Pattern / Sparkles Overlay for premium editorial feel */}
