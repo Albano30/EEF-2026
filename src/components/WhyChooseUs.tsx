@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
         
         {/* Title Info */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-display font-bold tracking-widest text-red-500 uppercase block mb-3">
             Nossos Diferenciais
           </span>
           <h2 className="font-display font-black text-3xl sm:text-4xl text-neutral-900 tracking-tight leading-none mb-4">
@@ -58,9 +58,9 @@ export default function WhyChooseUs() {
                 id={`why-card-${index}`}
               >
                 {/* Glow outline reflection */}
-                <div className="absolute inset-0 bg-red-650/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity pointer-events-none" />
+                <div className="absolute inset-0 bg-red-600/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity pointer-events-none" />
 
-                <div className="p-3 bg-red-50 border border-red-200/50 text-red-650 rounded-xl inline-block mb-4 group-hover:scale-105 transition-transform animate-pulse">
+                <div className="p-3 bg-red-50 border border-red-200/50 text-red-600 rounded-xl inline-block mb-4 group-hover:scale-105 transition-transform animate-pulse">
                   <Icon className="h-5.5 w-5.5" />
                 </div>
 

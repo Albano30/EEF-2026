@@ -141,7 +141,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="text-xs font-bold leading-none">Consultor Essimela</div>
-                  <div className="text-[10px] text-emerald-250 mt-0.5 font-medium flex items-center">
+                  <div className="text-[10px] text-emerald-100 mt-0.5 font-medium flex items-center">
                     <span className="h-1 w-1 bg-emerald-300 rounded-full inline-block mr-1" /> Ativo agora
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export default function App() {
                 placeholder="Escreva sua pergunta aqui..."
                 value={wpMessage}
                 onChange={(e) => setWpMessage(e.target.value)}
-                className="flex-1 bg-white border border-neutral-200 rounded-xl px-3 py-1.5 text-xs text-neutral-850 focus:outline-none focus:border-emerald-500 placeholder:text-neutral-400"
+                className="flex-1 bg-white border border-neutral-200 rounded-xl px-3 py-1.5 text-xs text-neutral-800 focus:outline-none focus:border-emerald-500 placeholder:text-neutral-400"
               />
               <button 
                 type="submit"
@@ -186,7 +186,7 @@ export default function App() {
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className="h-12 w-12 rounded-full bg-white/95 hover:bg-red-600 border border-neutral-200 hover:border-red-650 text-neutral-600 hover:text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+            className="h-12 w-12 rounded-full bg-white/95 hover:bg-red-600 border border-neutral-200 hover:border-red-600 text-neutral-600 hover:text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
             title="Voltar ao início"
             id="back-to-top-btn"
           >
@@ -198,7 +198,7 @@ export default function App() {
         <button
           onClick={() => setIsWpChatOpen(!isWpChatOpen)}
           className={`h-14 w-14 rounded-full flex items-center justify-center text-white shadow-2xl transition-all hover:scale-105 active:scale-95 cursor-pointer relative ${
-            isWpChatOpen ? 'bg-neutral-250 text-neutral-800 rotate-90 border border-neutral-300 shadow-lg' : 'bg-emerald-600 hover:bg-emerald-500 hover:shadow-emerald-950/20'
+            isWpChatOpen ? 'bg-neutral-200 text-neutral-800 rotate-90 border border-neutral-300 shadow-lg' : 'bg-emerald-600 hover:bg-emerald-500 hover:shadow-emerald-950/20'
           }`}
           title="Fale connosco no WhatsApp"
           id="wp-trigger-btn"

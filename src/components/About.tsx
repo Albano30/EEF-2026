@@ -11,7 +11,7 @@ export default function About({ aboutImg }: AboutProps) {
       icon: Target,
       title: 'Missão',
       desc: 'Proteger vidas e patrimónios com soluções técnicas de excelência contra incêndios e controle integrado de pragas, promovendo ambientes seguros e salubres.',
-      color: 'text-red-650 bg-red-50 border-red-200/80'
+      color: 'text-red-600 bg-red-50 border-red-200/80'
     },
     {
       icon: Eye,
@@ -23,7 +23,7 @@ export default function About({ aboutImg }: AboutProps) {
       icon: Heart,
       title: 'Valores',
       desc: 'Compromisso inabalável com a integridade das pessoas, conformidade legal rígida, agilidade, excelência técnica, e transparência com o cliente.',
-      color: 'text-blue-650 bg-blue-50 border-blue-200/80'
+      color: 'text-blue-600 bg-blue-50 border-blue-200/80'
     }
   ];
 
@@ -33,7 +33,7 @@ export default function About({ aboutImg }: AboutProps) {
         
         {/* Title and Intro */}
         <div className="max-w-3xl mb-16">
-          <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-display font-bold tracking-widest text-red-500 uppercase block mb-3">
             Sobre a EEF
           </span>
           <h2 className="font-display font-black text-3xl sm:text-4xl text-neutral-900 tracking-tight leading-none mb-6">

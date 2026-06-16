@@ -70,15 +70,7 @@ export default function Footer() {
               Mais de uma década garantindo proteção contra incêndio ativa e preventiva, manutenção técnica de extintores homologados, desinfestações gerais higiénicas de armazéns logísticos e industriais em todas as províncias do norte de Moçambique.
             </p>
 
-            {/* Compliance badges */}
-            <div className="pt-2 flex items-center space-x-3 text-[10px] uppercase font-mono font-bold text-neutral-500">
-              <div className="px-2 py-1 bg-neutral-50 border border-neutral-200 rounded">
-                Proteção Civil Moçambique
-              </div>
-              <div className="px-2 py-1 bg-neutral-50 border border-neutral-200 rounded">
-                INAE Aprovado
-              </div>
-            </div>
+
 
           </div>
 

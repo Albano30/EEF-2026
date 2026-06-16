@@ -152,7 +152,7 @@ export const COMPANY_DETAILS = {
   tagline: 'Servindo Moçambique com Segurança e Confiança',
   address: 'Av. Do Trabalho - Cidade de Nampula, Moçambique',
   phones: ['+258 849 378 149', '+258 860 212 216'],
-  email: 'essimelaextintores663@gmail.com',
+  email: 'vendas@eef.co.mz',
   whatsapp: '258849378149', // normalized number for direct WhatsApp links
   nuit: '124662117'
 };

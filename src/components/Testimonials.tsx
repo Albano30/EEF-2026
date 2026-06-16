@@ -9,7 +9,7 @@ export default function Testimonials() {
         
         {/* Title Group */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-display font-bold tracking-widest text-red-500 uppercase block mb-3">
             Depoimentos Reais
           </span>
           <h2 className="font-display font-black text-3xl text-neutral-900 tracking-tight leading-none mb-3">
@@ -38,20 +38,17 @@ export default function Testimonials() {
                   <Quote className="h-6 w-6 text-neutral-300 rotate-180" />
                 </div>
 
-                <p className="font-sans text-sm text-neutral-705 italic leading-relaxed">
+                <p className="font-sans text-sm text-neutral-700 italic leading-relaxed">
                   "{t.text}"
                 </p>
               </div>
 
               {/* Author Info */}
-              <div className="mt-6 pt-4 border-t border-neutral-150 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between">
                 <div>
                   <h4 className="font-display font-bold text-sm text-neutral-900">{t.name}</h4>
-                  <p className="text-xs text-neutral-550 mt-0.5">{t.role}</p>
+                  <p className="text-xs text-neutral-500 mt-0.5">{t.role}</p>
                 </div>
-                <span className="text-[10px] font-mono font-bold text-red-650 tracking-wider bg-red-50 border border-red-150 px-2 py-1 rounded">
-                  {t.company}
-                </span>
               </div>
             </div>
           ))}

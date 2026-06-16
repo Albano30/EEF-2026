@@ -54,7 +54,7 @@ export default function Projects({ onOpenBudgetModal, pestControlImg, extinguish
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div className="max-w-xl">
-            <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block mb-3">
+            <span className="text-xs font-display font-bold tracking-widest text-red-500 uppercase block mb-3">
               Portfólio de Sucesso
             </span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-neutral-900 tracking-tight leading-none">
@@ -102,7 +102,7 @@ export default function Projects({ onOpenBudgetModal, pestControlImg, extinguish
                   />
                   
                   {/* Category Pill Tag Overlay top left */}
-                  <span className="absolute top-3 left-3 bg-white/90 border border-neutral-200 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase text-red-650 z-10">
+                  <span className="absolute top-3 left-3 bg-white/90 border border-neutral-200 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase text-red-600 z-10">
                     {project.category}
                   </span>
  
@@ -124,8 +124,8 @@ export default function Projects({ onOpenBudgetModal, pestControlImg, extinguish
                     </p>
                   </div>
                   
-                  <div className="flex items-center text-xs font-mono font-bold text-red-600 mt-4 group-hover:translate-x-1.5 transition-transform">
-                    <span>Ver Estudo de Caso</span>
+                  <div className="flex items-center text-xs font-bold text-red-600 mt-4 group-hover:translate-x-1.5 transition-transform">
+                    <span className="font-display">Ver Estudo de Caso</span>
                     <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export default function Projects({ onOpenBudgetModal, pestControlImg, extinguish
 
               <div className="p-6 space-y-4">
                 <div className="flex items-center space-x-2">
-                  <span className="bg-red-50 border border-red-200 px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase text-red-650">
+                  <span className="bg-red-50 border border-red-200 px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase text-red-600">
                     {selectedProject.category}
                   </span>
                   <span className="text-[10px] text-neutral-500 font-mono">PROJETO HOMOLOGADO</span>
@@ -173,7 +173,7 @@ export default function Projects({ onOpenBudgetModal, pestControlImg, extinguish
                 </p>
 
                 <div className="flex items-center space-x-2 text-xs text-neutral-600 bg-neutral-50 p-3 rounded-xl border border-neutral-200">
-                  <Shield className="h-4.5 w-4.5 text-green-650 shrink-0" />
+                  <Shield className="h-4.5 w-4.5 text-green-600 shrink-0" />
                   <span>Segurança validada por técnicos qualificados da Essimela Extintores.</span>
                 </div>
 

@@ -85,7 +85,7 @@ export default function Navbar({ onOpenBudgetModal }: NavbarProps) {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleLinkClick(e, item.href)}
-                className="font-sans text-sm font-semibold text-neutral-700 hover:text-red-650 hover:-translate-y-0.5 transition-all duration-250 cursor-pointer"
+                className="font-sans text-sm font-semibold text-neutral-700 hover:text-red-600 hover:-translate-y-0.5 transition-all duration-250 cursor-pointer"
               >
                 {item.label}
               </a>

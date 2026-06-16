@@ -52,17 +52,17 @@ export default function Hero({ onOpenBudgetModal, heroImg }: HeroProps) {
         {/* Animated Badge */}
         <div className="inline-flex items-center space-x-2 bg-red-50 border border-red-200/80 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md animate-fade-in shadow-md shadow-red-100/10">
           <Flame className="h-4 w-4 text-red-500" />
-          <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-red-700 uppercase">
+          <span className="text-[11px] sm:text-xs font-display font-bold tracking-widest text-red-700 uppercase">
             Promoção da Segurança Contra Incêndio em Moçambique
           </span>
         </div>
 
         {/* Dynamic Typography Headings */}
         <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-neutral-900 tracking-tight max-w-4xl mx-auto leading-[1.1] mb-6">
-          Protegendo <span className="text-red-650 bg-gradient-to-r from-red-600 to-yellow-600 bg-clip-text text-transparent">vidas e patrimónios</span> com segurança e confiança.
+          Protegendo <span className="text-black">vidas e patrimónios</span> com segurança e confiança.
         </h1>
 
-        <p className="font-sans text-base sm:text-lg md:text-xl text-neutral-650 max-w-3xl mx-auto leading-relaxed mb-10">
+        <p className="font-sans text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed mb-10">
           A <span className="text-neutral-900 font-bold">Essimela Extintores & Fumigações</span> oferece soluções integradas e certificadas em proteção contra incêndios, recargas, desinfestações gerais e consultoria técnica. Atuamos com as melhores práticas de Moçambique.
         </p>
 

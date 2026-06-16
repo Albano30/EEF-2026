@@ -29,7 +29,7 @@ export default function Services({ onOpenBudgetModal }: ServicesProps) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-display font-bold tracking-widest text-red-500 uppercase block mb-3">
             O que fazemos
           </span>
           <h2 className="font-display font-black text-3xl sm:text-4xl text-neutral-900 tracking-tight leading-none mb-4">
@@ -57,7 +57,7 @@ export default function Services({ onOpenBudgetModal }: ServicesProps) {
                 
                 <div>
                   {/* Icon Panel with soft colored glow ring */}
-                  <div className="inline-flex p-3 rounded-xl bg-neutral-50 border border-neutral-200 text-red-650 mb-5 group-hover:bg-red-50 group-hover:border-red-300 transition-colors">
+                  <div className="inline-flex p-3 rounded-xl bg-neutral-50 border border-neutral-200 text-red-600 mb-5 group-hover:bg-red-50 group-hover:border-red-300 transition-colors">
                     <IconComponent className="h-6 w-6" />
                   </div>
 
@@ -73,7 +73,7 @@ export default function Services({ onOpenBudgetModal }: ServicesProps) {
                   <div className="mb-6">
                     <button 
                       onClick={() => setSelectedService(isExpanded ? null : service.id)}
-                      className="text-xs font-mono font-bold text-neutral-500 group-hover:text-red-650 flex items-center space-x-1 hover:underline cursor-pointer whitespace-nowrap"
+                      className="text-xs font-display font-bold text-neutral-500 group-hover:text-red-600 flex items-center space-x-1 hover:underline cursor-pointer whitespace-nowrap"
                     >
                       <span>{isExpanded ? 'Esconder Especificidades' : 'Ver Pormenores Técnicos'}</span>
                       <Icons.ChevronRight className={`h-3 w-3 transform transition-transform ${isExpanded ? 'rotate-90' : 'rotate-0'}`} />
@@ -93,16 +93,12 @@ export default function Services({ onOpenBudgetModal }: ServicesProps) {
                 </div>
 
                 {/* Card CTA bottom triggers */}
-                <div className="pt-4 border-t border-neutral-100 mt-auto flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold tracking-wide text-neutral-500 group-hover:text-neutral-700 uppercase">
-                    Serviço Homologado
-                  </span>
-                  
+                <div className="pt-4 border-t border-neutral-100 mt-auto flex items-center justify-end">
                   <button
                     onClick={() => onOpenBudgetModal(service.id)}
-                    className="flex items-center space-x-1.5 text-xs font-semibold px-3.5 py-2 bg-neutral-50 hover:bg-red-650 text-red-600 hover:text-white rounded-lg border border-neutral-200 hover:border-red-650 transition-all cursor-pointer shadow-sm"
+                    className="flex items-center space-x-1.5 text-xs font-semibold px-3.5 py-2 bg-neutral-50 hover:bg-red-600 text-red-600 hover:text-white rounded-lg border border-neutral-200 hover:border-red-600 transition-all cursor-pointer shadow-sm"
                   >
-                    <span>Orçar</span>
+                    <span className="font-display">Orçar</span>
                     <Icons.ArrowUpRight className="h-3.5 w-3.5" />
                   </button>
                 </div>

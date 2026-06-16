@@ -13,8 +13,32 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call or form submission
+    const subject = `Contacto Técnico via Site - ${formData.name}`;
+    const body = `Olá, EEF / Essimela,\n\nRecebeu um novo contacto técnico através do formulário do site:\n\n` +
+      `• Nome: ${formData.name}\n` +
+      `• Email: ${formData.email}\n` +
+      `• Telefone: ${formData.phone}\n\n` +
+      `Mensagem:\n${formData.message}\n\n` +
+      `--\n` +
+      `Contacto enviado a partir de: ${window.location.origin}`;
+
+    const mailtoUrl = `mailto:${COMPANY_DETAILS.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
     setIsSubmitted(true);
+  };
+
+  const triggerDirectMail = () => {
+    const subject = `Contacto Técnico via Site - ${formData.name}`;
+    const body = `Olá, EEF / Essimela,\n\nRecebeu um novo contacto técnico através do formulário do site:\n\n` +
+      `• Nome: ${formData.name}\n` +
+      `• Email: ${formData.email}\n` +
+      `• Telefone: ${formData.phone}\n\n` +
+      `Mensagem:\n${formData.message}\n\n` +
+      `--\n` +
+      `Contacto enviado a partir de: ${window.location.origin}`;
+
+    const mailtoUrl = `mailto:${COMPANY_DETAILS.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl, '_blank');
   };
 
   const handleWhatsAppChat = () => {
@@ -34,13 +58,13 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-8" id="contact-info">
             
             <div className="space-y-4">
-              <span className="text-xs font-mono font-bold tracking-widest text-red-500 uppercase block">
+              <span className="text-xs font-display font-bold tracking-widest text-red-500 uppercase block">
                 Fale Connosco
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-neutral-900 tracking-tight leading-none animate-fade-in">
                 Solicite o seu orçamento personalizado
               </h2>
-              <p className="font-sans text-neutral-650 text-sm sm:text-base leading-relaxed">
+              <p className="font-sans text-neutral-600 text-sm sm:text-base leading-relaxed">
                 Estamos prontos para atender a sua empresa, obra, armazém ou condomínio residencial em Nampula, Nacala e arredores. Entre em contacto para obter preços oficiais.
               </p>
             </div>
@@ -50,12 +74,12 @@ export default function Contact() {
               
               {/* Address card */}
               <div className="flex items-start space-x-4 p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
-                <div className="p-2.5 bg-red-50 text-red-650 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
+                <div className="p-2.5 bg-red-50 text-red-600 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
                   <h4 className="text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider">Endereço Operacional</h4>
-                  <p className="text-sm font-sans text-neutral-850 font-bold mt-1 leading-relaxed">
+                  <p className="text-sm font-sans text-neutral-800 font-bold mt-1 leading-relaxed">
                     {COMPANY_DETAILS.address}
                   </p>
                 </div>
@@ -63,7 +87,7 @@ export default function Contact() {
 
               {/* Phone card */}
               <div className="flex items-start space-x-4 p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
-                <div className="p-2.5 bg-red-50 text-red-650 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
+                <div className="p-2.5 bg-red-50 text-red-600 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
@@ -73,7 +97,7 @@ export default function Contact() {
                       <a 
                         key={i} 
                         href={`tel:${phone.replace(/\s/g, '')}`}
-                        className="text-sm font-sans text-neutral-805 font-bold hover:text-red-600 transition-colors"
+                        className="text-sm font-sans text-neutral-800 font-bold hover:text-red-600 transition-colors"
                       >
                         {phone}
                       </a>
@@ -84,14 +108,14 @@ export default function Contact() {
 
               {/* Email card */}
               <div className="flex items-start space-x-4 p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
-                <div className="p-2.5 bg-red-50 text-red-650 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
+                <div className="p-2.5 bg-red-50 text-red-600 rounded-lg shrink-0 mt-0.5 border border-red-200/50">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
                   <h4 className="text-xs font-mono font-semibold text-neutral-500 uppercase tracking-wider">Correio Eletrónico Coletivo</h4>
                   <a 
                     href={`mailto:${COMPANY_DETAILS.email}`} 
-                    className="text-sm font-sans text-neutral-805 font-bold hover:text-red-400 transition-colors block mt-1"
+                    className="text-sm font-sans text-neutral-800 font-bold hover:text-red-500 transition-colors block mt-1"
                   >
                     {COMPANY_DETAILS.email}
                   </a>
@@ -120,7 +144,7 @@ export default function Contact() {
             
             <div className="absolute top-0 right-8 transform -translate-y-1/2">
               <div className="bg-neutral-50 border border-neutral-200 text-neutral-600 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase flex items-center space-x-1.5 shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-green-550 animate-ping inline-block" />
+                <span className="h-2 w-2 rounded-full bg-green-500 animate-ping inline-block" />
                 <span>Resposta em até 24h</span>
               </div>
             </div>
@@ -137,55 +161,55 @@ export default function Contact() {
                   
                   {/* Name field */}
                   <div className="space-y-1">
-                    <label className="text-xs text-neutral-650 block font-semibold">Seu nome ou Razão Social *</label>
+                    <label className="text-xs text-neutral-600 block font-semibold">Seu nome ou Razão Social *</label>
                     <input 
                       type="text" 
                       required
                       placeholder="Ex: Albano Luís"
                       value={formData.name}
                       onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
-                      className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all shadow-sm"
+                      className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-800 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-400 transition-all shadow-sm"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Email field */}
                     <div className="space-y-1">
-                      <label className="text-xs text-neutral-650 block font-semibold">Email *</label>
+                      <label className="text-xs text-neutral-600 block font-semibold">Email *</label>
                       <input 
                         type="email" 
                         required
                         placeholder="Ex: albano@exemplo.com"
                         value={formData.email}
                         onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
-                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all shadow-sm"
+                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-800 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-400 transition-all shadow-sm"
                       />
                     </div>
                     
                     {/* Phone field */}
                     <div className="space-y-1">
-                      <label className="text-xs text-neutral-650 block font-semibold">Telefone de Contacto *</label>
+                      <label className="text-xs text-neutral-600 block font-semibold">Telefone de Contacto *</label>
                       <input 
                         type="tel" 
                         required
                         placeholder="Ex: +258 849 378 149"
                         value={formData.phone}
                         onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
-                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all shadow-sm"
+                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-800 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-400 transition-all shadow-sm"
                       />
                     </div>
                   </div>
 
                   {/* Message field */}
                   <div className="space-y-1">
-                    <label className="text-xs text-neutral-650 block font-semibold">Escreva sua mensagem ou dúvida técnica *</label>
+                    <label className="text-xs text-neutral-600 block font-semibold">Escreva sua mensagem ou dúvida técnica *</label>
                     <textarea 
                       rows={4}
                       required
                       placeholder="Indique como podemos ajudá-lo hoje: se precisa de inspeção, extintor novo, recarga de cilindro de CO2 ou dedetização..."
                       value={formData.message}
                       onChange={(e) => setFormData(p => ({ ...p, message: e.target.value }))}
-                      className="w-full bg-white border border-neutral-200 rounded-xl p-4 text-sm text-neutral-850 focus:outline-none focus:ring-1 focus:ring-red-550 focus:border-red-550 placeholder:text-neutral-400 transition-all resize-none shadow-sm"
+                      className="w-full bg-white border border-neutral-200 rounded-xl p-4 text-sm text-neutral-800 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 placeholder:text-neutral-400 transition-all resize-none shadow-sm"
                     />
                   </div>
 
@@ -217,21 +241,31 @@ export default function Contact() {
                   <CheckCircle2 className="h-10 w-10 animate-bounce" />
                 </div>
                 <div className="space-y-2 max-w-sm">
-                  <h3 className="font-display font-bold text-2xl text-neutral-900">Mensagem Enviada!</h3>
+                  <h3 className="font-display font-bold text-2xl text-neutral-900">Mensagem Preparada!</h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">
-                    Olá <span className="font-bold text-neutral-900">{formData.name}</span>, recebemos sua mensagem. Um consultor técnico da nossa equipa em Nampula entrará em contacto muito brevemente.
+                    Olá <span className="font-bold text-neutral-900">{formData.name}</span>, a sua mensagem técnica foi direcionada e configurada para envio direto ao endereço <span className="font-bold text-neutral-950 underline">vendas@eef.co.mz</span>.
                   </p>
                 </div>
-                
-                <button
-                  onClick={() => {
-                    setFormData({ name: '', email: '', phone: '', message: '' });
-                    setIsSubmitted(false);
-                  }}
-                  className="px-5 py-2.5 border border-neutral-300 hover:border-neutral-400 text-neutral-700 hover:text-neutral-900 font-semibold text-xs rounded-xl transition-all cursor-pointer"
-                >
-                  Enviar Outra Mensagem
-                </button>
+
+                <div className="flex flex-col sm:flex-row gap-3 w-full justify-center items-center">
+                  <button
+                    onClick={triggerDirectMail}
+                    className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-xl shadow transition-all cursor-pointer flex items-center justify-center space-x-1.5"
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span>Abrir Cliente de Email</span>
+                  </button>
+                  
+                  <button
+                    onClick={() => {
+                      setFormData({ name: '', email: '', phone: '', message: '' });
+                      setIsSubmitted(false);
+                    }}
+                    className="px-5 py-2.5 border border-neutral-300 hover:border-neutral-400 text-neutral-700 hover:text-neutral-900 font-semibold text-xs rounded-xl transition-all cursor-pointer"
+                  >
+                    Enviar Outra Mensagem
+                  </button>
+                </div>
               </div>
             )}
 
